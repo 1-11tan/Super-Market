@@ -1,7 +1,7 @@
 import tkinter
 import tkinter.messagebox
 import AddProducts
-import Billing
+import billing
 import update_products
 import view_products
 
@@ -14,11 +14,11 @@ class myprogram:
     def open_update_products(self):
         obj=update_products.sup()
     def open_raisebill(self):
-        obj=Billing.billing()
+        obj=billing.billing()
     def __init__(self):
 
         self.root=tkinter.Tk()
-        self.root.geometry("1000x1000")
+        self.root.geometry("500x500")
 
         self.mymenu=tkinter.Menu(self.root)
         self.root.title("Welcome to My Super Market")

@@ -6,14 +6,14 @@ import tkinter.messagebox
 
 class billing:
     def raise_bill(self):
-        wr=open("bill.csv","r",newline="")
+        wr=open("bill.csv","w",newline="")
         writer=csv.writer(wr)
         for line in self.t1.get_children():
             row=[]
             for r in self.t1.item(line)["values"]:
                 row.append(r)
             row.append(self.txt_date.get())
-            row.append(self.txt_build.get())
+            # row.append(self.txt_build.get())
             row.append(self.txt_customer_name.get())
             writer.writerow(row)
             print(row)
@@ -27,7 +27,9 @@ class billing:
             reader=csv.reader(rd)
             flag=False
             for row in reader:
-                if str(row[0])==str(self.txt_pid.get()) and str(row[6])==str(self.txt_customer_name.get()):
+                print(row)
+                # if str(row[0])==str(self.txt_pid.get()) and str(row[6])==str(self.txt_customer_name.get()):
+                if str(row[0])==str(self.txt_pid.get()):
                     flag=True
                     pname=row[1]
                     price=row[2]
@@ -149,4 +151,4 @@ class billing:
         self.root.mainloop()
 
 #----------------------------------------
-obj=billing()
+#obj=billing()
