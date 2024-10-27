@@ -5,7 +5,7 @@ import tkinter.ttk
 class sup:
     def __init__(self):
         self.root=tkinter.Tk()
-        self.t1=tkinter.ttk.Treeview(self.root,columns=("pid","pname","catg","price","discount","offer","cno"))
+        self.t1=tkinter.ttk.Treeview(self.root,columns=("pid","pname","price","catg","discount","offer","cno"))
         self.t1.heading("pid", text="Product ID")
         self.t1.heading("pname", text="Product Name")
         self.t1.heading("catg", text="Category")

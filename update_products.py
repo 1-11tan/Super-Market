@@ -8,18 +8,18 @@ class sup:
 
     def remove_record(self):
         rd=open("products.csv","r")
-        wr=open("temp.csv","w", newline="")
+        wr=open("temp.csv","w",newline="")
         reader=csv.reader(rd)
         writer=csv.writer(wr)
         for row in reader:
             if row[0]==self.txt1.get():
-                tkinter.messagebox.showinfo("Super Market","Record Removed")
+                tkinter.messagebox.showinfo("Super market","Record Removed")
             else:
                 writer.writerow(row)
         rd.close()
         wr.close()
-        os.remove("product.csv")
-        os.rename("temp.csv","product.csv")
+        os.remove("products.csv")
+        os.rename("temp.csv","products.csv")
 
     def search(self):
         rd=open("product.csv","r")
@@ -46,7 +46,7 @@ class sup:
         self.txt2 = tkinter.Entry(self.root)
 
         self.lb3 = tkinter.Label(self.root, text="Category")
-        self.cb1 = tkinter.ttk.Combobox(self.root, values=("FMCG", "Cosmetics", "Cleaning Solution", "Groceries", "Dairy Products"))
+        self.cb1 = tkinter.ttk.Combobox(self.root, values=("FMCG", "Cosmetics", "Cleaning Solution", "Groceries", "Daily Products"))
 
         self.lb4 = tkinter.Label(self.root, text="Price")
         self.txt3 = tkinter.Entry(self.root)
@@ -60,7 +60,7 @@ class sup:
         self.lb7 = tkinter.Label(self.root, text="Customer Phone Number")
         self.txt6 = tkinter.Entry(self.root)
 
-        self.bt1 = tkinter.Button(self.root,text="Add Product",command=self.remove_record)
+        self.bt1 = tkinter.Button(self.root,text="Remove Product",command=self.remove_record)
 
         self.lb1.grid(row=0, column=0)
         self.txt1.grid(row=0, column=1)
